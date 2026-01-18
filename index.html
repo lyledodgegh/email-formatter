@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Formatter</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3G5T32G7JN"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3G5T32G7JN');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Formatter</h1>
+        <div class="main-content">
+            <div class="textbox-container">
+                <label for="input-text">Input</label>
+                <textarea id="input-text" placeholder="Paste your email addresses here..."></textarea>
+            </div>
+            
+            <div class="buttons-container">
+                <button id="btn-extract-emails">Extract Emails</button>
+                <button id="btn-extract-usernames">Extract Usernames</button>
+                <button id="btn-one-per-line">One Per Line</button>
+                <button id="btn-clear">Clear</button>
+                <button id="btn-output-to-input">← Output to Input</button>
+                <button id="btn-copy">Copy Output</button>
+            </div>
+            
+            <div class="textbox-container">
+                <label for="output-text">Output</label>
+                <textarea id="output-text" placeholder="Formatted output will appear here..." readonly></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
