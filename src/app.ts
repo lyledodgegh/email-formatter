@@ -16,6 +16,7 @@ class EmailFormatter {
         document.getElementById('btn-extract-usernames')?.addEventListener('click', () => this.extractUsernames());
         document.getElementById('btn-one-per-line')?.addEventListener('click', () => this.onePerLine());
         document.getElementById('btn-clear')?.addEventListener('click', () => this.clear());
+        document.getElementById('btn-output-to-input')?.addEventListener('click', () => this.outputToInput());
         document.getElementById('btn-copy')?.addEventListener('click', () => this.copyOutput());
     }
 
@@ -91,6 +92,15 @@ class EmailFormatter {
      */
     private clear(): void {
         this.inputTextarea.value = '';
+        this.outputTextarea.value = '';
+        this.inputTextarea.focus();
+    }
+
+    /**
+     * Copy the output text to the input text area.
+     */
+    private outputToInput(): void {
+        this.inputTextarea.value = this.outputTextarea.value;
         this.outputTextarea.value = '';
         this.inputTextarea.focus();
     }
