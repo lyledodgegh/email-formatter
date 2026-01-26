@@ -1,4 +1,4 @@
-# Email Formatter
+# Email Tools
 
 This site is just a helper client only TypeScript application to take a blob of text and do a bunch of things to it, such as:
 

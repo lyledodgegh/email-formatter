@@ -1,6 +1,6 @@
 "use strict";
-// Email Formatter Application
-class EmailFormatter {
+// Email Tools Application
+class EmailTools {
     constructor() {
         this.inputTextarea = document.getElementById('input-text');
         this.outputTextarea = document.getElementById('output-text');
@@ -154,6 +154,6 @@ class EmailFormatter {
 }
 // Initialize the application when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    new EmailFormatter();
+    new EmailTools();
 });
 //# sourceMappingURL=app.js.map

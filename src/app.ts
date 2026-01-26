@@ -1,6 +1,6 @@
-// Email Formatter Application
+// Email Tools Application
 
-class EmailFormatter {
+class EmailTools {
     private inputTextarea: HTMLTextAreaElement;
     private outputTextarea: HTMLTextAreaElement;
 
@@ -196,5 +196,5 @@ class EmailFormatter {
 
 // Initialize the application when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    new EmailFormatter();
+    new EmailTools();
 });
