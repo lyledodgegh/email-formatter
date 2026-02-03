@@ -71,12 +71,14 @@ class EmailTools {
             this.setOutput('No emails found in input');
             return;
         }
-        const url = `https://teams.microsoft.com/l/chat/0/0?users=${emails.join(',')}`;
+        const url = `https://teams.microsoft.com/v2/chat?email=${emails.join(',')}`;
         this.setOutput(url);
     }
     /**
-     * Generate Slack chat URL from emails.
-     * Format: https://slack.com/app_redirect?channel=@<email>
+     * Generate Slack group chat instructions from emails.
+     * Note: Unlike Teams, Slack does not support creating group chats via URL with emails.
+     * Slack requires pre-existing conversation IDs which cannot be generated from email addresses alone.
+     * This method provides a helpful format for manually creating a group chat in Slack.
      */
     generateSlackUrl() {
         const emails = this.getEmailsFromInput();
@@ -84,9 +86,19 @@ class EmailTools {
             this.setOutput('No emails found in input');
             return;
         }
-        // Slack uses a different URL pattern - for DMs it redirects to user
-        const urls = emails.map(email => `https://slack.com/app_redirect?channel=@${email}`);
-        this.setOutput(urls.join('\n'));
+        // Slack doesn't support group chat URLs like Teams does
+        // Provide instructions and email list for manual group chat creation
+        const instructions = [
+            'Slack does not support creating group chats via URL like Teams.',
+            'To create a group chat in Slack:',
+            '1. Click the "+" next to "Direct Messages" in Slack',
+            '2. Add the following email addresses:',
+            '',
+            ...emails,
+            '',
+            '(Email list formatted for easy copying - one per line)'
+        ];
+        this.setOutput(instructions.join('\n'));
     }
     /**
      * Generate Google Workspace chat URL from emails.
